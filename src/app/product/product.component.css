@@ -1,0 +1,58 @@
+.evtng-con{
+    background-color: rgb(245, 247, 249);
+    padding: 5rem;
+    display: grid;
+    grid-template-columns: 2fr 6fr;
+}
+
+.filter{
+    background-color: rgb(245, 247, 249);
+    padding-right: 3rem;       
+}
+
+.filter-search-con{
+    display: flex;
+    gap: 1rem;
+}
+.filter-search{
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid rgba(12, 12, 12, 0.122);
+}
+
+.filter-btn{
+    padding: 1rem;
+    color: white;
+    background-color: rgba(54, 54, 199, 0.67);
+}
+
+.filter-price-con{
+    margin: 3rem 0rem;
+}
+
+.filter-btn-price{
+    margin: 1rem 0rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-btn{
+    padding: .5rem 1rem;
+}
+.filter-categories h2{
+    margin-bottom: 1rem;
+}
+.filter-categories{
+    line-height: 2.5rem;
+    text-transform: capitalize;
+}
+.product-display{
+    display: grid;
+    column-gap: 7rem;
+    row-gap: 3rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 5rem;
+    background-color: white
+}
+

@@ -1,0 +1,56 @@
+<section class="home-con">
+    <div class="home-con-inner">
+        <h1>Raining Offers For Hot Summer!</h1>
+        <h2>25% Off On All Products</h2>
+        <div class="home-btn">
+            <button class="shop-btn">SHOP NOW</button>
+            <button class="trans">FIND MORE</button>
+        </div>
+    </div>
+</section>
+<section class="home-body">
+  <section class="home-shop">
+    <div class="shop-image-grid">
+      <div class="shop-image-con" *ngFor="let item of items">
+        <img class="shop-img" src={{item.imageURL}} alt="">
+        <div class="details">
+          <h2>{{ item.title }}</h2>
+          <p>{{ item.description }}</p>
+          <button class="shop-btn" >SHOP NOW</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="home-features">
+      <app-featuredproducts></app-featuredproducts>
+  </section>
+  <section class="shop-offer">
+      <h2>Limited Time Offer</h2>
+      <h1>Special Edition</h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta temporibus tempora incidunt provident rerum cum nostrum, minus vero autem iure!</p>
+      <h3>Buy This T-shirt At 20% Discount, Use Code OFF20</h3>
+      <button class="shop-btn">SHOP NOW</button>
+  </section>
+  <section class="home-perks">
+    <div class="home-perks-con">
+      <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/lock-free-img.png" alt="">
+      <h3>Worldwide Shipping</h3>
+      <p>It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+    </div>
+    <div class="home-perks-con">
+      <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/lock-free-img.png" alt="">
+      <h3>Worldwide Shipping</h3>
+      <p>It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+    </div>
+    <div class="home-perks-con">
+      <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/lock-free-img.png" alt="">
+      <h3>Worldwide Shipping</h3>
+      <p>It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+    </div>
+    <div class="home-perks-con">
+      <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/lock-free-img.png" alt="">
+      <h3>Worldwide Shipping</h3>
+      <p>It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+    </div>
+  </section>
+</section>

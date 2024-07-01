@@ -1,0 +1,18 @@
+<nav class="nav">
+    <div class="nav-left">
+        <ul class="nav-links">
+            <li [routerLink]="['']" routerLinkActive="active"><img class="nav-logo" src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/logo@2x-free-img.png" alt=""></li>
+            <li [routerLink]="['/product', 'all']" routerLinkActive="active">EVERYTHING</li>
+            <li [routerLink]="['/product', 'women\'s clothing']" routerLinkActive="active">WOMEN</li>
+            <li [routerLink]="['/product', 'men\'s clothing']" routerLinkActive="active">MEN</li>
+            <li [routerLink]="['/product', 'electronics']" routerLinkActive="active">ELECTRONICS</li>
+        </ul>
+    </div>
+    <div class="nav-right"> 
+        <ul class="nav-links">
+            <li [routerLink]="['/about']" routerLinkActive="active">ABOUT</li>
+            <li>CONTACTUS</li>
+            <li>LOGOUT</li>
+        </ul>
+    </div>
+</nav>

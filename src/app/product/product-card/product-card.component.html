@@ -1,0 +1,9 @@
+<section>
+    <img class="product-img" src={{item.image}} alt=""/>
+    <div class="product-data">
+        <p class="product-title">{{item.title}}</p>
+        <p class="product-category">{{item.category}}</p>
+        <p class="product-price">{{item.price | currency:'USD':true}}</p>
+        <!-- <p-rating [(ngModel)]="item.rating.rate" [readonly]="true" [cancel]="false" /> -->
+    </div>
+</section>

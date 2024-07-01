@@ -1,0 +1,53 @@
+.foot-main{
+    background-color: rgb(245, 247, 249);
+}
+.foot-adv{
+    text-align: center;
+    background-color: white;
+    padding: 3rem 10rem;
+}
+
+.footer-body{
+    display: grid;
+    padding: 5rem 10rem;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    line-height: 2rem;
+    border-top: 0.7px solid rgba(207, 204, 204, 0.762);
+    border-bottom: 0.7px solid rgba(207, 204, 204, 0.762);
+}
+
+.foot-img{
+    height: 2rem;
+    width: auto;
+}
+
+.footer-con h2{
+    font-weight: 100;
+    margin-bottom: 1rem;
+}
+
+.footer-con p{
+    color: rgba(44, 44, 44, 0.653);
+    font-size: 1rem;
+    font-weight: 100;
+}
+
+.footer-con input{
+    font-size: 1rem;
+    border: 1px solid red;
+    margin-bottom: 1.5rem;
+    padding: .75rem .5rem;
+}
+
+.footer-con button{
+    background-color: rgba(13, 13, 209, 0.584);
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.footer-end{
+    padding: 3rem 10rem;
+    background-color: white;
+    color: rgba(0, 0, 0, 0.722);
+}

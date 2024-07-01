@@ -1,0 +1,17 @@
+.feature-products{
+    width: 100%;
+    box-sizing: border-box;
+}
+.feature-title{
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+.products-con{
+    margin: 2rem 0rem;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4,1fr);
+    justify-content: center;
+    gap: 3rem;
+}

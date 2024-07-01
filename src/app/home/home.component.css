@@ -1,0 +1,139 @@
+.home-con{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+}
+.home-con-inner{
+    box-sizing: border-box;
+    margin-left: 10rem;
+    line-height: 5.5rem;
+    width: 50%;
+    color: white;
+}
+.home-con::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url('https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2019/12/home-new-bg-free-img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -2; 
+}
+.home-con h1{
+    font-size: 4.25rem;
+}
+
+.home-btn{
+    display: flex;
+    gap: 1rem;
+}
+
+.home-features{
+    padding: 5rem 10rem;
+    background-color: rgb(245, 247, 249);
+    border-top: 0.7px solid rgba(207, 204, 204, 0.762);
+    border-bottom: 0.7px solid rgba(207, 204, 204, 0.762);
+}
+.home-shop{
+    padding: 5rem 10rem;
+    overflow: hidden;
+}
+
+.shop-image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem
+}
+
+.shop-image-con{
+    position: relative;
+    height: 30rem;
+}
+
+.shop-image-con::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    z-index: 1;
+}
+
+.shop-img {
+    position: relative;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+}
+.details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 2rem;
+    line-height: 2.25rem;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 3;
+}
+
+.details button{
+    margin-top: 2rem;
+}
+
+.home-body{
+    background-color: white;
+}
+
+.shop-offer{
+    box-sizing: border-box;
+    line-height: 2rem;
+    padding: 7rem;
+    margin: 5rem 10rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2019/12/banner-03.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.shop-offer p{
+    width: 50%;
+}
+.shop-offer h1{
+    font-size: 3rem;
+    margin: 2rem 0rem;
+}
+
+.shop-offer h3{
+    margin-bottom: 2rem;
+}
+
+.home-perks{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 4rem;
+    text-align: center;
+    line-height: 2rem;
+    padding: 5rem 10rem;
+    background-color: rgb(245, 247, 249);
+    margin: 0rem 0rem;
+    border-top: 0.7px solid rgba(207, 204, 204, 0.762);
+    border-bottom: 0.7px solid rgba(207, 204, 204, 0.762);
+
+}
+
+.home-perks img{
+    height: 4rem;
+    width: auto;
+}
+
+
