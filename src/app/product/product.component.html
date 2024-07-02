@@ -14,7 +14,7 @@
         <div class="filter-categories">
             <h2>Categories</h2>
             <p *ngFor="let cat of categories" [routerLink]="['/product',cat]">
-                {{cat}} 
+                {{cat.name}} 
             </p>
         </div>
     </div>

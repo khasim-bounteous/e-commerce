@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { Product } from '../../interface/Product';
+import { Category, Product } from '../../interface/Product';
 import { ProductService } from '../../service/product.service';
 
 @Component({
@@ -8,17 +8,10 @@ import { ProductService } from '../../service/product.service';
   styleUrl: './featuredproducts.component.scss'
 })
 export class FeaturedproductsComponent {
-  mensProducts : Product[] = []
-  womenProducts: Product[] = []
-
+  categories : Category[] = []
+  
   ngOnInit(){
-    this.productService.getMensClothing().subscribe((data)=>{
-      this.mensProducts = data
-    });
-
-    this.productService.getWomensClothing().subscribe((data)=>{
-      this.womenProducts = data
-    })
+    this.productService.getCategories().subscribe(data=>this.categories=data)
   }
 
   constructor(private productService: ProductService){}

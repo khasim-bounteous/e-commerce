@@ -4,6 +4,7 @@ import { ProductComponent } from './product.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { FeaturedproductsComponent } from './featuredproducts/featuredproducts.component';
 import { RouterModule } from '@angular/router';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 
 
@@ -11,11 +12,13 @@ import { RouterModule } from '@angular/router';
   declarations: [
     ProductComponent,
     ProductCardComponent,
-    FeaturedproductsComponent
+    FeaturedproductsComponent,
+    ProductDetailsComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    
   ],
   exports:[
     FeaturedproductsComponent

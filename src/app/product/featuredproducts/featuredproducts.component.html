@@ -1,13 +1,8 @@
 <section class="feature-products">
     <h1 class="feature-title">Featured Products</h1>
     <div class="products-con">
-        <div  *ngFor="let item of mensProducts">
-            <app-product-card [item]="item"></app-product-card>
-        </div>
-    </div>
-    <div class="products-con">
-        <div  *ngFor="let item of womenProducts">
-            <app-product-card [item]="item"></app-product-card>
+        <div  *ngFor="let item of categories">
+             {{item.name}}
         </div>
     </div>
 </section>

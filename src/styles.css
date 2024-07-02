@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *{
     margin: 0px;
     padding: 0px;
@@ -14,7 +18,7 @@ button{
     text-transform: uppercase;
     box-sizing: border-box;
     letter-spacing: 1px;
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 1rem;
     font-weight: 400;
 }
 

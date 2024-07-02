@@ -9,13 +9,16 @@ import { FooterComponent } from './footer/footer.component';
 import { ProductModule } from './product/product.module';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { UserAuthModule } from './user-auth/user-auth.module';
+import { IndexComponent } from './index/index.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     ProductModule,
     CommonModule,
     HttpClientModule,
+    UserAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
