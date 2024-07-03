@@ -1,30 +1,64 @@
 <section class="evtng-con">
     <div class="filter">
-        <div class="filter-search-con">
-            <input class="filter-search" type="text" placeholder="Search products...">
+        <div class="filter-search-con mb-3">
+            <input class="filter-search" type="text" [formControl]="searchControl" placeholder="Search products...">
             <button class="filter-btn">></button>
         </div>
-        <div class="filter-price-con">
-            <h2>Filter by Price</h2>
-            <div class="filter-btn-price">
-                <button class="filter-btn price-btn">FILTER</button>
-                <p>Price: $150--$180</p>
-            </div>
-        </div>
         <div class="filter-categories">
-            <h2>Categories</h2>
-            <p *ngFor="let cat of categories" [routerLink]="['/product',cat]">
-                {{cat.name}} 
+            <p (click)="getAllProducts()" class="hover:cursor-pointer hover:text-blue-600">All</p>
+            <p (click)="getProductsByCategory(cat.id)" class="hover:cursor-pointer hover:text-blue-600"
+                *ngFor="let cat of categories.slice(0,5)">
+                {{cat.name}}
             </p>
+        </div>
+        <div class="filter-price-con">
+            <div class="p-4 bg-white rounded shadow-md">
+                <h3 class="text-lg font-medium mb-4">Filter by Price</h3>
+                <form (ngSubmit)="applyFilter()">
+                    <div class="mb-4">
+                        <label for="minPrice" class="block text-sm font-medium text-gray-700">Min Price</label>
+                        <input type="number" max="{{maxPrice}}" id="minPrice" [(ngModel)]="minPrice" name="minPrice"
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    </div>
+                    <div class="mb-4">
+                        <label for="maxPrice" class="block text-sm font-medium text-gray-700">Max Price</label>
+                        <input type="number" min="{{minPrice}}" id="maxPrice" [(ngModel)]="maxPrice" name="maxPrice"
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700">Apply</button>
+                </form>
+            </div>
         </div>
     </div>
     <div class="product-display" *ngIf="items.length!==0; else noProductTemplate">
         <app-product-card *ngFor="let item of items" [item]="item"></app-product-card>
     </div>
+    <nav *ngIf="items.length!==0">
+        <ul class="pagination">
+            <li class="page-item">
+                <p class="page-link" (click)="pageIncDec(-1)" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </p>
+            </li>
+            <li (click)="getPage(i)" [ngClass]="currPage==i ? 'bg-blue-500 text-white' : '' " class="page-link"
+                *ngFor="let i of [1,2,3,4]">
+                {{i}}
+            </li>
+            <li class="page-item">
+                <p class="page-link" (click)="pageIncDec(1)" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </p>
+            </li>
+        </ul>
+    </nav>
 
     <ng-template #noProductTemplate>
         <h2>
             No products available
         </h2>
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
     </ng-template>
-</section> 
+</section>

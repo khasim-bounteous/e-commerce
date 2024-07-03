@@ -18,11 +18,16 @@ export class UserauthService {
     return this.http.post<any>(`${environment.apiEndPoint}/auth/login`,loginDetails)
   }
 
+  userLogout():void{
+    this.storage.removeItem('access_token');
+    this.storage.removeItem('regresh_token');
+  }
+
   getUserProfile(){
     const access_token = this.storage.getItem('access_token')
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${access_token}`
-    });
+  });
 
     return this.http.get<any>('https://api.escuelajs.co/api/v1/auth/profile', { headers });
   }

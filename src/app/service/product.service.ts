@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { Category, Product } from '../interface/Product';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
+import { Observable, filter, map } from 'rxjs';
 import { environment } from '../../environments/environment.development';
 import { JsonPipe } from '@angular/common';
 
@@ -26,16 +26,11 @@ export class ProductService {
     return this.http.get<Product[]>("https://fakestoreapi.com/products/category/women's clothing?limit=4")
   }
   
-  getEverthing(): Observable<Product[]>{
-    return this.http.get<Product[]>(`${environment.apiEndPoint}/products`)
-  }
-
-  getProductByCategory(productType:string):Observable<Product[]>{
-    return this.http.get<Product[]>(`https://fakestoreapi.com/products/category/${productType}`)
+  getEverthing(offSet: number): Observable<Product[]>{
+    return this.http.get<Product[]>(`${environment.apiEndPoint}/products/?offset=${offSet}&limit=12`)
   }
 
   getCategories(): Observable<Category[]>{
-    // return this.http.get<Category[]>(`${environment.apiEndPoint}/categories`)
     return this.http.get<Category[]>(`${environment.apiEndPoint}/categories`)
   }
 
@@ -43,9 +38,18 @@ export class ProductService {
     return this.http.get<Product>(`${environment.apiEndPoint}/products/${id}`)
   }
 
+  getProductsByCategory(id:number): Observable<Product[]>{
+    return this.http.get<Product[]>(`${environment.apiEndPoint}/categories/${id}/products`)
+  }
 
+  searchProduct(search:string):Observable<Product[]>{
+    console.log(search)
+    return this.http.get<Product[]>(`${environment.apiEndPoint}/products/?title=${search}`)
+  }
 
-
+  searchProductByFilter(price_min:number,price_max:number,category:string):Observable<Product[]>{
+    return this.http.get<Product[]>(`${environment.apiEndPoint}/products/?price_min=${price_min}&price_max=${price_max}&categoryId=${category}`)
+  }
 
   // api related 
   // deleteProduce(id:number):Observable<Product>{

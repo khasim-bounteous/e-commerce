@@ -1,18 +1,15 @@
 <nav class="nav">
     <div class="nav-left">
         <ul class="nav-links">
-            <li [routerLink]="['']" routerLinkActive="active"><img class="nav-logo" src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/logo@2x-free-img.png" alt=""></li>
-            <li [routerLink]="['/products']" routerLinkActive="active">EVERYTHING</li>
-            <!-- <li [routerLink]="['/products', 'women\'s clothing']" routerLinkActive="active">WOMEN</li>
-            <li [routerLink]="['/products', 'men\'s clothing']" routerLinkActive="active">MEN</li>
-            <li [routerLink]="['/products', 'electronics']" routerLinkActive="active">ELECTRONICS</li> -->
+            <li [routerLink]="['']" class="h-15w-15" routerLinkActive="active"><img class="nav-logo rounded-full" src="../../assets/logo.webp" alt=""></li>
+            <li [routerLink]="['/products']" class="my-auto" routerLinkActive="active">EVERYTHING</li>
         </ul>
     </div>
-    <div class="nav-right"> 
+    <div class="nav-right my-auto"> 
         <ul class="nav-links">
-            <li [routerLink]="['/about']" routerLinkActive="active">ABOUT</li>
-            <li>CONTACTUS</li>
-            <li>LOGOUT</li>
+            <li  [routerLink]="['/about']" routerLinkActive="active">ABOUT</li>
+            <li >CONTACTUS</li>
+            <li (click)="onLogout()">LOGOUT</li>
         </ul>
     </div>
 </nav>

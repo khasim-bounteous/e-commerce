@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { Category, Product } from '../interface/Product';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
+import { debounceTime, filter, switchMap } from 'rxjs/operators';
 import { ProductService } from '../service/product.service';
+import { FormControl } from '@angular/forms';
 
 
 @Component({
@@ -15,36 +16,74 @@ export class ProductComponent {
 
   items: Product[] = []
   categories: Category[] = []
-  category: string = "all"
+  categoryId: string = ''
+  searchControl = new FormControl("")
+  minPrice: number = 20;
+  maxPrice: number = 40;
+  currPage: number = 1
+  offSet: number = 0
 
   constructor(
     private productService:ProductService,
     private route: ActivatedRoute
   ){}
 
+
   ngOnInit(){
-    this.route.paramMap.pipe(
-      switchMap(params => {
-        this.category = params.get('category') ?? "all";
-        console.log(this.category)
-        return this.category === 'all'
-          ? this.productService.getEverthing()
-          : this.productService.getProductByCategory(this.category);
-      })
-    ).subscribe(items => this.items = items);
+
+    this.productService.getEverthing(this.offSet).subscribe((data)=>{
+      this.items=data
+      console.log(data)
+    })
 
     this.productService.getCategories().subscribe((data)=>{
       this.categories = data
     })
+
+    this.searchControl.valueChanges.pipe(
+      debounceTime(1000),
+      switchMap(()=>this.productService.searchProduct(this.searchControl.value??""))
+    ).subscribe((data)=>this.items=data)
+  }
+
+  applyFilter() {
+    this.productService.searchProductByFilter(this.minPrice,this.maxPrice,this.categoryId).subscribe(
+      (data)=>this.items = data
+    )
   }
 
   getAllProducts(){
-    this.productService.getEverthing().subscribe((data)=>{
-      console.log(data)
+    this.categoryId = ''
+    this.productService.getEverthing(this.offSet).subscribe((data)=>{
       this.items=data
     })
   }
 
-  
+  getProductsByCategory(id:number){
+    this.categoryId = id.toString()
+    this.productService.getProductsByCategory(id).subscribe((data)=>{
+      this.items = data
+    })
+  }  
+
+  getPage(page:number){
+    if(page>0 && page<=4)
+    {
+      this.currPage=page
+      this.offSet=(this.currPage-1)*12
+      this.getAllProducts()
+    }
+  }
+
+  pageIncDec(page:number){
+    if(this.currPage+page<1 || this.currPage+page>5)
+      console.log("last page")
+    else
+    {
+      this.currPage+=page
+      this.offSet=(this.currPage-1)*12
+      this.getAllProducts()
+    }
+  }
 
 }

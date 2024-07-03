@@ -9,7 +9,9 @@ import { ProductService } from './service/product.service';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+
   title = 'E-Commerce';
+  isUserAuth = false
 
   constructor(
     private userAuth: UserauthService,
@@ -18,14 +20,7 @@ export class AppComponent {
   ){}
 
   ngOnInit(){
-    this.userAuth.getUserProfile().subscribe({
-      next: (data)=>{
-        console.log(data)
-      },
-      error: (err)=>{
-        this.route.navigate(["/login"])
-      }
-    })
+    
   }
   // onDelete(){
   //   for(let product in this.productService.product)

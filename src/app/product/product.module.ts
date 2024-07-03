@@ -5,6 +5,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { FeaturedproductsComponent } from './featuredproducts/featuredproducts.component';
 import { RouterModule } from '@angular/router';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,7 +19,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
   imports: [
     CommonModule,
     RouterModule,
-    
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports:[
     FeaturedproductsComponent

@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.css'
 })
 export class LoginComponent {
 
@@ -29,10 +29,13 @@ export class LoginComponent {
       password: this.loginDetails.value.password?.toString() ?? ""
     }
 
-    this.userAuth.userLogin(userDetails).subscribe(data=>{
-      localStorage.setItem("access_token",data.access_token)
-      localStorage.setItem("refresh_token",data.refresh_token)
-      this.route.navigate([""])
+    this.userAuth.userLogin(userDetails).subscribe({
+      next: data=>{
+        localStorage.setItem("access_token",data.access_token)
+        localStorage.setItem("refresh_token",data.refresh_token)
+        this.route.navigate([""])
+      },
+      error: ()=>alert("wrong password")
     })
   }
 }
