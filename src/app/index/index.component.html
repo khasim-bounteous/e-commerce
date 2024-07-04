@@ -1,5 +1,7 @@
-<app-navbar></app-navbar>
-<section class="home-container-page mt-20">
-  <router-outlet></router-outlet>
+<section *ngIf="isUserAuth">
+    <app-navbar></app-navbar>
+    <section class="home-container-page mt-20">
+    <router-outlet></router-outlet>
+    </section>
+    <app-footer></app-footer>
 </section>
-<app-footer></app-footer>

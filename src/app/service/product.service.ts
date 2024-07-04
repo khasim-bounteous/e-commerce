@@ -18,13 +18,14 @@ export class ProductService {
 
   
 
-  getMensClothing(): Observable<Product[]>{
-    return this.http.get<Product[]>(`${this.baseUrl}/category/men's clothing?limit=4`)
-  }
+  // getMensClothing(): Observable<Product[]>{
+  //   return this.http.get<Product[]>(`${this.baseUrl}/category/men's clothing?limit=4`)
+  // }
 
-  getWomensClothing(): Observable<Product[]>{
-    return this.http.get<Product[]>("https://fakestoreapi.com/products/category/women's clothing?limit=4")
-  }
+  // getWomensClothing(): Observable<Product[]>{
+  //   return this.http.get<Product[]>("https://fakestoreapi.com/products/category/women's clothing?limit=4")
+  // }
+  
   
   getEverthing(offSet: number): Observable<Product[]>{
     return this.http.get<Product[]>(`${environment.apiEndPoint}/products/?offset=${offSet}&limit=12`)

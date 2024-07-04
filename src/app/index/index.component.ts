@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
   styleUrl: './index.component.scss'
 })
 export class IndexComponent {
+
+  isUserAuth = false
   constructor(
     private userAuth: UserauthService,
     private productService: ProductService,
@@ -19,6 +21,7 @@ export class IndexComponent {
     this.userAuth.getUserProfile().subscribe({
       next: (data)=>{
         console.log(data)
+        this.isUserAuth = true
       },
       error: (err)=>{
         this.route.navigate(["/login"])

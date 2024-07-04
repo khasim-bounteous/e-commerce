@@ -11,7 +11,6 @@ import { ProductService } from './service/product.service';
 export class AppComponent {
 
   title = 'E-Commerce';
-  isUserAuth = false
 
   constructor(
     private userAuth: UserauthService,
