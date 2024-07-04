@@ -33,7 +33,6 @@ export class ProductComponent {
 
     this.productService.getEverthing(this.offSet).subscribe((data)=>{
       this.items=data
-      console.log(data)
     })
 
     this.productService.getCategories().subscribe((data)=>{

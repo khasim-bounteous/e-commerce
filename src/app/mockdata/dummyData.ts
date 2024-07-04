@@ -1,13 +1,13 @@
-const product = [
+export const dummyProduct = [
     {
       "id": 2,
       "title": "Classic Red Pullover Hoodie",
       "price": 13,
       "description": "Elevate your casual wardrobe with our Classic Red Pullover Hoodie. Crafted with a soft cotton blend for ultimate comfort, this vibrant red hoodie features a kangaroo pocket, adjustable drawstring hood, and ribbed cuffs for a snug fit. The timeless design ensures easy pairing with jeans or joggers for a relaxed yet stylish look, making it a versatile addition to your everyday attire.",
       "images": [
-        "[\"https://i.imgur.com/1twoaDy.jpeg\"",
-        "\"https://i.imgur.com/FDwQgLy.jpeg\"",
-        "\"https://i.imgur.com/kg1ZhhH.jpeg\"]"
+        "https://i.imgur.com/1twoaDy.jpeg",
+        "https://i.imgur.com/FDwQgLy.jpeg",
+        "https://i.imgur.com/kg1ZhhH.jpeg"
       ],
       "creationAt": "2024-07-02T14:55:54.000Z",
       "updatedAt": "2024-07-02T14:59:06.000Z",
@@ -998,7 +998,7 @@ const product = [
     }
   ]
   
-const categories =[
+export const dummyCategories =[
     {
       "id": 1,
       "name": "Clothes",
