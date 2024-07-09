@@ -10,22 +10,12 @@ import { Router } from '@angular/router';
 })
 export class IndexComponent {
 
-  isUserAuth = false
+  isUserAuth = true
   constructor(
     private userAuth: UserauthService,
     private productService: ProductService,
     private route: Router
   ){}
 
-  ngOnInit(){
-    this.userAuth.getUserProfile().subscribe({
-      next: (data)=>{
-        console.log(data)
-        this.isUserAuth = true
-      },
-      error: (err)=>{
-        this.route.navigate(["/login"])
-      }
-    })
-  }
+
 }
